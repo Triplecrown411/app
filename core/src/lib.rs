@@ -4,7 +4,7 @@ use uuid::Uuid;
 use chrono::prelude::*;
 
 #[derive(Debug)]
-struct Note {
+pub struct Note {
     id: Option<i32>,
     uuid: Uuid,
     created: Option<DateTime<Utc>>,
@@ -66,7 +66,7 @@ impl Note {
     }
 }
 
-fn init_db(conn: &Connection) -> Result<()> {
+pub fn init_db(conn: &Connection) -> Result<()> {
     conn.execute(
         "CREATE TABLE IF NOT EXISTS notes (
              id INTEGER PRIMARY KEY,
@@ -84,7 +84,7 @@ fn init_db(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
-fn main() -> Result<()> {
+pub fn check() -> Result<()> {
 
     let conn = Connection::open("wizard.db")?;
 

@@ -1,0 +1,4 @@
+data/com.sam_morrow.WizardNotes.desktop.in
+data/com.sam_morrow.WizardNotes.appdata.xml.in
+data/com.sam_morrow.WizardNotes.gschema.xml
+src/window.ui
