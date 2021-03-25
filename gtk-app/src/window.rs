@@ -7,7 +7,7 @@ pub struct Window {
 
 impl Window {
     pub fn new() -> Self {
-        let builder = gtk::Builder::new_from_resource("/com/sam_morrow/WizardNotes/window.ui");
+        let builder = gtk::Builder::from_resource("/com/sam_morrow/WizardNotes/window.ui");
         let widget: gtk::ApplicationWindow = builder
             .get_object("window")
             .expect("Failed to find the window object");
@@ -16,8 +16,9 @@ impl Window {
             .get_object("label")
             .expect("Failed to find the label object");
 
-        label.set_markup("Hello Rust!");
-        check();
+        let note_2 = check().unwrap();
+        label.set_markup(&note_2.title);
+
         Self { widget }
     }
 }

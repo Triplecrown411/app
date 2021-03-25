@@ -5,14 +5,14 @@ use chrono::prelude::*;
 
 #[derive(Debug)]
 pub struct Note {
-    id: Option<i32>,
+    pub id: Option<i32>,
     uuid: Uuid,
-    created: Option<DateTime<Utc>>,
-    modified: Option<DateTime<Utc>>,
-    notify: DateTime<Utc>,
-    title: String,
-    body: Option<String>,
-    is_archived: bool
+    pub created: Option<DateTime<Utc>>,
+    pub modified: Option<DateTime<Utc>>,
+    pub notify: DateTime<Utc>,
+    pub title: String,
+    pub body: Option<String>,
+    pub is_archived: bool
 }
 
 impl Note {
@@ -84,7 +84,7 @@ pub fn init_db(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
-pub fn check() -> Result<()> {
+pub fn check() -> Result<(Note)> {
 
     let conn = Connection::open("wizard.db")?;
 
@@ -124,5 +124,5 @@ pub fn check() -> Result<()> {
 
     conn.execute("DROP TABLE notes", NO_PARAMS)?;
 
-    Ok(())
+    Ok(note2)
 }

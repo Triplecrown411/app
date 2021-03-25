@@ -5,8 +5,9 @@ project('wizard-notes',
                    ],
 )
 
-i18n = import('i18n')
+dependency('libhandy-1', version: '>= 1.0.0')
 
+i18n = import('i18n')
 
 subdir('data')
 subdir('gtk-app/src')

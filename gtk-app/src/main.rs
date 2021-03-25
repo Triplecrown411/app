@@ -1,6 +1,7 @@
 use gettextrs::*;
 use gio::prelude::*;
 use gtk::prelude::*;
+use libhandy::prelude::*;
 
 mod config;
 mod window;
@@ -8,7 +9,7 @@ use crate::window::Window;
 
 fn main() {
     gtk::init().unwrap_or_else(|_| panic!("Failed to initialize GTK."));
-
+    libhandy::init();
     setlocale(LocaleCategory::LcAll, "");
     bindtextdomain("wizard-notes", config::LOCALEDIR);
     textdomain("wizard-notes");
