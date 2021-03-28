@@ -84,7 +84,7 @@ pub fn init_db(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
-pub fn check() -> Result<(Note)> {
+pub fn check() -> Result<Note> {
 
     let conn = Connection::open("wizard.db")?;
 
