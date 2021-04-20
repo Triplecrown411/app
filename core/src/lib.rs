@@ -6,7 +6,7 @@ use chrono::prelude::*;
 #[derive(Debug)]
 pub struct Note {
     pub id: Option<i32>,
-    uuid: Uuid,
+    pub uuid: Uuid,
     pub created: Option<DateTime<Utc>>,
     pub modified: Option<DateTime<Utc>>,
     pub notify: DateTime<Utc>,

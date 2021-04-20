@@ -3,6 +3,8 @@ use gio::prelude::*;
 use gtk::prelude::*;
 use libhandy::prelude::*;
 
+mod gtypes;
+use crate::gtypes::NoteModel;
 mod config;
 mod window;
 use crate::window::Window;
